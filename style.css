@@ -217,7 +217,7 @@ button:disabled {
     }
 
     .container__imagem {
-        display: none;
+        /* display: none;  */
     }
 
     .container__conteudo {
@@ -287,4 +287,12 @@ button:disabled {
     .container__logo img {
         width: 4rem;
     }
+    .container__imagem img {
+        width: 150px;
+    }
+    .container__imagem{
+        justify-content: space-between;
+        height: 600px;
+    }
+
 }
