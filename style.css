@@ -81,12 +81,13 @@ button:disabled {
     width: 100%;
     height: 3rem;
     border-radius: 8px;
-    background-color: #FFF;
-    border: none;
+    border: 1px solid #ffff;
+    background-color: transparent;
     color: #1875E8;
     padding: 1rem;
     font-size: 1rem;
     margin-bottom: 1rem;
+    outline: none;
 }
 
 .container__nota {
@@ -122,20 +123,37 @@ button:disabled {
     background-color: #033674;
     color: white;
     border: 2px solid #fffafa;
+    transition: all 0.3s ease-in;
 }
 
 .container_botao2 {
     background-color: #f3f3f3;
     color: #033674;
     border: 2px solid #033674;
+    transition: all 0.3s ease-in;
 }
 
 .container_botao3 {
     background-color: #fffafa;
     color: #033674;
     border: 2px solid #033674;
+    transition: all 0.3s ease-in;
+}
+.container_botao1:hover{
+    background-color: #1875E8;
+    
 }
 
+.container_botao2:hover{
+    background-color: #1875E8;
+    color: #ffff;
+    
+}
+.container_botao3:hover{
+    background-color: #1875E8;
+    color: #ffff;
+    
+}
 .container__imagem {
     display: flex;
     flex-direction: column;
