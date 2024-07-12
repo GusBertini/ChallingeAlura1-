@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Alura</title>
+    <script src="./app.js" defer></script>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container__conteudo">
+            <div class="container__informacoes">
+                <div class="container__texto">
+                    <h1>Digite seu texto</h1>
+                </div>
+                <input type="text" class="container__input" id="inputText" oninput="validateInput(this)" placeholder=".....">
+                <p class="container__nota">Apenas letras minúsculas e sem acento.</p>
+                <div class="container_botoes">
+                    <button onclick="criptografar()" class="container_botao1">Criptografar</button>
+                    <button onclick="descriptografar()" class="container_botao2">Descriptografar</button>
+                </div>
+            </div>
+            <div class="container__imagem">
+                <img src="img/img1.png" alt="imagem">
+                <p class="texto__imagem">Nenhuma mensagem encontrada</p>
+                <p class="texto__imagem2">Digite um texto que você deseja criptografar ou descriptografar.</p>
+                <p id="outputText" class="texto__imagem"></p>
+                <button onclick="copyToClipboard()" class="container_botao3">Copiar</button>
+            </div>
+        </div>
+    </div>
+    <div class="container__logo">
+        <img src="img/alura_logo.jpg" alt="Logo da Alura">
+    </div>
+    <script>
+        function validateInput(input) {
+            input.value = input.value.toLowerCase().replace(/[^a-z ]/g, '');
+        }
+
+        function clearOutput() {
+            document.getElementById('outputText').textContent = '';
+        }
+    </script>
+    <footer>
+        <p>&copy; Todos os direitos reservados Gustavo Bertini.</p>
+    </footer>
+</body>
+</html>
