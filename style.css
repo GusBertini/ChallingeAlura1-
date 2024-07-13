@@ -21,7 +21,6 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-    background-color:rgba(0, 0, 255, 0)
 }
 
 h1 {
@@ -40,7 +39,6 @@ button:disabled {
 
 .container {
     width: 80%;
-    /* max-width: 1200px; */
     height: 80%;
     display: flex;
     align-items: center;
@@ -51,7 +49,6 @@ button:disabled {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-left: 20%; 
-   
 }
 
 .container__conteudo {
@@ -139,21 +136,21 @@ button:disabled {
     border: 2px solid #033674;
     transition: all 0.3s ease-in;
 }
-.container_botao1:hover{
+
+.container_botao1:hover {
     background-color: #1875E8;
-    
 }
 
-.container_botao2:hover{
+.container_botao2:hover {
     background-color: #1875E8;
     color: #ffff;
-    
 }
-.container_botao3:hover{
+
+.container_botao3:hover {
     background-color: #1875E8;
     color: #ffff;
-    
 }
+
 .container__imagem {
     display: flex;
     flex-direction: column;
@@ -181,7 +178,6 @@ button:disabled {
     text-align: center;
     font-size: 22px;
     font-weight: bold;
-    /* padding: 2rem; */
 }
 
 .texto__imagem2 {
@@ -216,10 +212,6 @@ button:disabled {
         font-size: 0.875rem;
     }
 
-    /* .container__imagem {
-        /* display: none;  */ 
-    } */
-
     .container__conteudo {
         display: block;
         position: inherit;
@@ -229,12 +221,19 @@ button:disabled {
         padding: 1rem;
     }
 
+    .container__logo {
+        top: 1.5rem; 
+        left: 1.5rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-left: 0;
+        padding-bottom: 5rem; /* Adicionado para garantir espaço para o footer */
     }
 
     .container__imagem {
@@ -255,12 +254,18 @@ button:disabled {
     .container_botao1, .container_botao2, .container_botao3 {
         width: 100%;
     }
+
+    .container__logo {
+        top: 1rem; 
+        left: 1rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .container {
         padding: 1rem;
         margin-left: 0;
+        padding-bottom: 5rem; /* Adicionado para garantir espaço para o footer */
     }
 
     .container__informacoes {
@@ -287,16 +292,19 @@ button:disabled {
 
     .container__logo img {
         width: 4rem;
-        font-size: 1rem;
-        
-        
     }
+    
     .container__imagem img {
         width: 150px;
     }
-    .container__imagem{
+    
+    .container__imagem {
         justify-content: space-between;
         height: 600px;
     }
-
+    
+    .container__logo {
+        top: 0.5rem; 
+        left: 0.5rem;
+    }
 }
