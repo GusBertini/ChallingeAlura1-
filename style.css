@@ -215,9 +215,9 @@ button:disabled {
         font-size: 0.875rem;
     }
 
-    .container__imagem {
-        /* display: none;  */
-    }
+    /* .container__imagem {
+        /* display: none;  */ 
+    } */
 
     .container__conteudo {
         display: block;
@@ -227,7 +227,6 @@ button:disabled {
     .container__informacoes {
         padding: 1rem;
     }
-}
 
 @media screen and (max-width: 768px) {
     .container {
