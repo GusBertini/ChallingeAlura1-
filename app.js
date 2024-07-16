@@ -56,9 +56,8 @@ function updateClipboard() {
 }
 
 function validateInput(input) {
-    input.value = input.value.toLowerCase().replace(/[^a-z]/g, '');
+    input.value = input.value.toLowerCase().replace(/[^a-z\s]/g, ''); 
 }
-
 function clearOutput() {
     document.getElementById('outputText').textContent = '';
     document.getElementById('outputText').style.display = 'none'; 
