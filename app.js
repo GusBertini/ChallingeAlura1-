@@ -1,45 +1,62 @@
+    let inputText = document.getElementById('inputText');
+    let outputText = document.getElementById('outputText');
+function inserirHTML(elemento,mensagem){
+    return elemento.innerHTML = `${mensagem}`;
+    
+}
 function criptografar() {
-    let inputText = document.getElementById('inputText').value;
-    let outputText = inputText.replace(/e/g, 'enter')
-                              .replace(/i/g, 'imes')
-                              .replace(/a/g, 'ai')
-                              .replace(/o/g, 'ober')
-                              .replace(/u/g, 'ufat');
-    document.getElementById('outputText').textContent = outputText;
+    let inputValue = document.getElementById('inputText').value;
+    let criptografiaResult = criptografia(inputValue);
+    inserirHTML(outputText,criptografiaResult)
     document.getElementById('outputText').style.display = 'block'; 
     document.querySelector('.texto__imagem').style.display = 'none'; 
     document.querySelector('.texto__imagem2').style.display = 'none'; 
     document.querySelector('.container_botao3').style.display = 'block'; 
-    updateClipboard(outputText); 
+    limparCampo(inputText);
+}
+function criptografia(valor){
+    return valor.replace(/e/g, 'enter')
+    .replace(/i/g, 'imes')
+    .replace(/a/g, 'ai')
+    .replace(/o/g, 'ober')
+    .replace(/u/g, 'ufat');
+}
+function descriptografia(valor){
+    return valor.replace(/enter/g, 'e')
+    .replace(/imes/g, 'i')
+    .replace(/ai/g, 'a')
+    .replace(/ober/g, 'o')
+    .replace(/ufat/g, 'u');
 
-    document.getElementById('inputText').value = '';
+}
+function limparCampo(elemento){
+   elemento.value = '';
 }
 
 function descriptografar() {
-    let inputText = document.getElementById('inputText').value;
-    let outputText = inputText.replace(/enter/g, 'e')
-                              .replace(/imes/g, 'i')
-                              .replace(/ai/g, 'a')
-                              .replace(/ober/g, 'o')
-                              .replace(/ufat/g, 'u');
-    document.getElementById('outputText').textContent = outputText;
+    let inputValue = document.getElementById('inputText').value;
+    let descriptografiaResult = descriptografia(inputValue);
+    inserirHTML(outputText,descriptografiaResult)
     document.getElementById('outputText').style.display = 'block'; 
     document.querySelector('.texto__imagem').style.display = 'none'; 
     document.querySelector('.texto__imagem2').style.display = 'none';
     document.querySelector('.container_botao3').style.display = 'block'; 
-    updateClipboard(outputText); 
-
-    document.getElementById('inputText').value = '';
+    limparCampo(inputText);
+   
 }
 
-function updateClipboard(newClip) {
-    navigator.clipboard.writeText(newClip)
-        .then(() => {})
+function updateClipboard() {
+    let outputValue = outputText.innerHTML;
+    navigator.clipboard.writeText(outputValue)
+        .then(() => {
+            alert('texto copiado!')
+        })
         .catch(err => console.error('Erro ao copiar texto: ', err));
+
 }
 
 function validateInput(input) {
-    input.value = input.value.toLowerCase().replace(/[^a-z ]/g, '');
+    input.value = input.value.toLowerCase().replace(/[^a-z]/g, '');
 }
 
 function clearOutput() {
